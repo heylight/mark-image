@@ -38,8 +38,8 @@ import MarkImage from "mark-image";
 
 ```javascript
 const markImage = new MarkImage({
-  el: ".container", // 挂载节点 document.querySelector()参数
-  imageSrc: "./source.jpg", // 引入需要标注的图片
+  el: ".container", // 挂载节点 等同document.querySelector()参数 （必填）
+  imageSrc: "./source.jpg", // 引入需要标注的图片 (必填)
   data: [
     // 初始化默认的标注位置
     [461, 348, 573, 467],
@@ -87,15 +87,17 @@ const markImage = new MarkImage({
     console.log(list);
   },
 });
-/**
- * 方法
- *
+```
+
+### 方法
+
+```js
+// 适配图片到画布中，推荐插件初次实例画之后执行此方法
+markImage.fitting();
 // 放大
 markImage.zoomIn();
 // 缩小
 markImage.zoomOut();
-// 适配
-markImage.fitting();
 // 删除
 markImage.remove(index);
 ```
