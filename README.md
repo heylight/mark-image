@@ -92,7 +92,7 @@ const markImage = new MarkImage({
 ### 方法
 
 ```js
-// 适配图片到画布中，推荐插件初次实例画之后执行此方法
+// 适配图片到画布中，推荐插件初次实例化之后执行此方法
 markImage.fitting();
 // 放大
 markImage.zoomIn();
