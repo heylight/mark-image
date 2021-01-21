@@ -1,6 +1,6 @@
 {
   "name": "mark-image",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "lib/mark-image.min.js",
   "scripts": {
