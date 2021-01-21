@@ -1,14 +1,15 @@
 # mark-image 图片标注插件
 
-基于 canvas 进行图片标注，独立 umd 模块，轻量不依赖第三方库。
+基于 canvas 进行图片标注，独立 umd 模块，轻量(13kb)不依赖第三方库
 
 ## 功能
 
-1. 滚轮缩放标注画布
-2. 鼠标右键移动拖动画布
-3. 选中标注框，方向键位移
+1. 鼠标左键拖动开始标注
+2. 滚轮缩放标注画布
+3. 鼠标右键移动拖动画布
+4. 选中标注框，方向键位移
 
-<img src="example/demo.png">
+![](https://heylight.github.io/images/demo.png)
 
 ## 引入
 
@@ -20,6 +21,12 @@
     imageSrc: "./test1.jpg",
   });
 </script>
+```
+
+or
+
+```
+npm i mark-image
 ```
 
 ```js
@@ -80,7 +87,9 @@ const markImage = new MarkImage({
     console.log(list);
   },
 });
-
+/**
+ * 方法
+ *
 // 放大
 markImage.zoomIn();
 // 缩小
