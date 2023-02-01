@@ -48,7 +48,7 @@ interface HitPoint {
 }
 
 class MarkImage {
-  readonly el: string = '';
+  readonly el: (string|HTMLElement) = '';
   readonly imageSrc: string = '';
   data: number[][] = [];
   lock: boolean = false;
@@ -108,7 +108,7 @@ class MarkImage {
     this.image = new Image()
     this.canvas = document.createElement('canvas')
     this.ctx = this.canvas.getContext('2d')
-    this.container = document.querySelector(this.el)
+    this.container = (this.el instanceof HTMLElement)? this.el : document.querySelector(this.el)
     this.container.appendChild(this.canvas)
     this.WIDTH = this.canvas.width = this.container.clientWidth
     this.HEIGHT = this.canvas.height = this.container.clientHeight

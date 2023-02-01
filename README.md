@@ -11,34 +11,49 @@
 
 ![](https://heylight.github.io/images/demo.png)
 
-## 引入
+## 用法
+
+#### 直接使用
 
 ```html
+<div id="container"></div>
 <script src="mark-image.min.js"></script>
 <script>
   var markImage = new MarkImage({
-    el: ".container",
+    el: "#container",
     imageSrc: "./test1.jpg",
   });
 </script>
 ```
-
 or
+
+```html
+<div id="container"></div>
+<script src="mark-image.min.js"></script>
+<script>
+    var markImage = new MarkImage({
+        el: document.getElementById("container"),
+        imageSrc: "./test1.jpg",
+    });
+</script>
+```
+
+#### 模块方式
 
 ```
 npm i mark-image
 ```
 
-```js
+```javascript
 import MarkImage from "mark-image";
 // ...
 ```
 
-## 使用
+## 配置
 
 ```javascript
 const markImage = new MarkImage({
-  el: ".container", // 挂载节点 等同document.querySelector()参数 （必填）
+  el: ".container", // 挂载节点 等同document.querySelector()参数, 也可以传入dom （必填）
   imageSrc: "./source.jpg", // 引入需要标注的图片 (必填)
   data: [
     // 初始化默认的标注位置

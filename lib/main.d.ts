@@ -33,7 +33,7 @@ interface HitPoint {
     bottom?: number;
 }
 declare class MarkImage {
-    readonly el: string;
+    readonly el: (string | HTMLElement);
     readonly imageSrc: string;
     data: number[][];
     lock: boolean;
