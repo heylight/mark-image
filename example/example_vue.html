@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>vue例子</title>
+    <style>
+        .container {
+            width: 500px;
+            height: 500px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div ref="container" class="container"></div>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="../lib/mark-image.min.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        mounted(){
+            const container = this.$refs.container
+            const markImage = new MarkImage({
+                el: container, // 直接挂载dom元素
+                imageSrc: "./source.jpg", // 引入需要标注的图片
+                data: [
+                    // 初始化默认的标注位置
+                    [200, 190, 293, 276],
+                    [404, 73, 495, 165],
+                    [534, 10, 612, 100],
+                ],
+                lock: false, // 是否禁用标注
+                label: {
+                    show: true,
+                    stroke: "#000",
+                    fill: "#fac031",
+                },
+                pixel: {
+                    show: true,
+                    fill: "rgba(0,0,0,0.6)",
+                },
+                limitSize: {
+                    // 最小标注尺寸
+                    minWidth: 10,
+                    minHeight: 10,
+                },
+                activeRect: {
+                    // 活动选框样式
+                    stroke: "#67C23A",
+                    lineDash: [4, 2],
+                    lineDashOffset: 2,
+                },
+                rect: {
+                    // 已选标注框样式
+                    fill: "rgba(247,200,4,0.2)",
+                    stroke: "rgba(247,200,4,1)",
+                },
+                onload() {
+                }, // 图片加载完成
+                onselect(index, coor) {
+                    // 输出当前选中的标注矩形，参数 index为索引,coor为坐标
+                    console.log(index, coor);
+                },
+                onresult(list) {
+                    // 输出标注的矩形列表，也可以直接通过markImage.dataset获取
+                    console.log(JSON.stringify(list));
+                },
+            });
+            markImage.fitting()
+        }
+    })
+</script>
+</html>
