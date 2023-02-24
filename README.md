@@ -2,6 +2,8 @@
 
 基于 canvas 进行图片标注，独立 umd 模块，轻量(13kb)不依赖第三方库
 
+> ⚠️ 当前库已不再维护，请使用[canvas-select](https://www.npmjs.com/package/canvas-select)
+
 ## 功能
 
 1. 鼠标左键拖动开始标注
